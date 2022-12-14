@@ -1,5 +1,6 @@
 // like the class choice iconsimport { useEffect, useState } from 'react'
 
+import Image from 'next/image'
 import styled from 'styled-components'
 
 
@@ -35,8 +36,8 @@ const ButtonWrapper = styled.li`
   }
 
   img {
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
+    max-width: calc(100% - 2px);
+    max-height: calc(100% - 2px);
     border: 1px solid transparent;
     border-radius: 4px;
 
@@ -79,6 +80,6 @@ export const IconNav = (props) => {
     return (<ButtonWrapper 
         className={activeClass}
         onClick={handleButtonClick} >
-        <img src={icon} alt={name} />
+        <Image src={icon} alt={name} fill />
     </ButtonWrapper>)
 }

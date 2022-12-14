@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 import styled from 'styled-components'
@@ -25,8 +26,8 @@ const ButtonWrapper = styled.li`
   }
 
   img {
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
+    max-width: calc(100% - 2px);
+    max-height: calc(100% - 2px);
     border: 1px solid transparent;
     border-radius: 4px;
 
@@ -67,6 +68,7 @@ const Tooltip = styled.div`
   border-radius: 8px;
   border: 2px solid #fff;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.75) , inset 0 0 4px 0 rgba(0,0,9,0.5);
+  z-index: 10;
 `
 
 const TooltipTitle = styled.h4`
@@ -107,8 +109,6 @@ export const IconButton = (props) => {
         setIsHovered(false)
     }
 
-    
-
     const canIncrease = totalPoints >= treePoints
 
     const handleCallback = (action) => {
@@ -118,18 +118,18 @@ export const IconButton = (props) => {
     const handleButtonClick = () => {
         if (points < max && canIncrease) {
             const newPoints = points + 1
-            if (typeof handleChange === 'function') handleChange(data, 1, 'add')
+            if (typeof handleChange === 'function') handleChange(data, 1)
             setPoints(newPoints)
             if (enableTree) handleCallback('add')
-        }/*  else if (points === max) {
-            if (typeof handleChange === 'function') handleChange(data, max, 'remove')
-            setPoints(0)
-            if (enableTree) handleCallback('remove')
-        } */
+        }
     }
 
-    return (<ButtonWrapper onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleButtonClick} className={classes.join(' ')} >
-        <img src={icon} alt={name} />
+    return (<ButtonWrapper
+      onMouseEnter={handleMouseEnter} 
+      onMouseLeave={handleMouseLeave} 
+      onClick={handleButtonClick} 
+      className={classes.join(' ')}>
+      <Image src={icon} alt={name} fill />
         {active && <p>{points}/{max}</p>}
         {isHovered && <Tooltip>
           <TooltipTitle>{name}</TooltipTitle>

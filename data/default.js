@@ -1,10 +1,20 @@
+import {
+    defaultIcon,
+    warriorIcon,
+    mageIcon,
+    necromancerIcon,
+    paladinIcon,
+    rogueIcon,
+    treeBg
+} from "./icons"
+
 export default {
     "name": "default",
-    "icon": "/images/icons/medium/spell_fire_fire.jpg",
+    "icon": defaultIcon,
     "specializations": [
         {
             "name": "default",
-            "background": "/images/art/llama-king-2.png",
+            "background": treeBg,
             "tree": [
                 {
                     "points": 0,
@@ -14,7 +24,7 @@ export default {
                             "id": "skill1",
                             "name": "Skill 1",
                             "description": "Skill 1 description",
-                            "icon": "/images/icons/medium/spell_fire_fire.jpg",
+                            "icon": defaultIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -23,7 +33,7 @@ export default {
                             "id": "skill2",
                             "name": "Skill 2",
                             "description": "Skill 2 description",
-                            "icon": "/images/icons/medium/spell_fire_fire.jpg",
+                            "icon": defaultIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -32,7 +42,7 @@ export default {
                             "id": "skill3",
                             "name": "Skill 3",
                             "description": "Skill 3 description",
-                            "icon": "/images/icons/medium/spell_fire_fire.jpg",
+                            "icon": defaultIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -47,7 +57,7 @@ export default {
                             "id": "skill4",
                             "name": "Skill 4",
                             "description": "Skill 4 description",
-                            "icon": "/images/icons/medium/spell_fire_fire.jpg",
+                            "icon": defaultIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -56,7 +66,7 @@ export default {
                             "id": "skill5",
                             "name": "Skill 5",
                             "description": "Skill 5 description",
-                            "icon": "/images/icons/medium/spell_fire_fire.jpg",
+                            "icon": defaultIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -65,7 +75,7 @@ export default {
                             "id": "skill6",
                             "name": "Skill 6",
                             "description": "Skill 6 description",
-                            "icon": "/images/icons/medium/spell_fire_fire.jpg",
+                            "icon": defaultIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -80,7 +90,7 @@ export default {
                             "id": "skill7",
                             "name": "Skill 7",
                             "description": "Skill 7 description",
-                            "icon": "/images/icons/medium/spell_fire_fire.jpg",
+                            "icon": defaultIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -89,7 +99,7 @@ export default {
                             "id": "skill8",
                             "name": "Skill 8",
                             "description": "Skill 8 description",
-                            "icon": "/images/icons/medium/spell_fire_fire.jpg",
+                            "icon": defaultIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -98,7 +108,7 @@ export default {
                             "id": "skill9",
                             "name": "Skill 9",
                             "description": "Skill 9 description",
-                            "icon": "/images/icons/medium/spell_fire_fire.jpg",
+                            "icon": defaultIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -113,7 +123,7 @@ export default {
                             "id": "warrior",
                             "name": "Warrior",
                             "description": "Skill 10 description",
-                            "icon": "/images/icons/medium/class_warrior.jpg",
+                            "icon": warriorIcon,
                             "max": 1,
                             "enableTree": "warrior",
                             "col": 0,
@@ -123,7 +133,7 @@ export default {
                             "id": "mage",
                             "name": "Mage",
                             "description": "Skill 11 description",
-                            "icon": "/images/icons/medium/class_mage.jpg",
+                            "icon": mageIcon,
                             "max": 1,
                             "enableTree": "mage",
                             "col": 1,
@@ -133,7 +143,7 @@ export default {
                             "id": "paladin",
                             "name": "Paladin",
                             "description": "Skill 12 description",
-                            "icon": "/images/icons/medium/class_paladin.jpg",
+                            "icon": paladinIcon,
                             "max": 1,
                             "enableTree": "paladin",
                             "col": 2,
@@ -143,7 +153,7 @@ export default {
                             "id": "rogue",
                             "name": "Rogue",
                             "description": "Skill 13 description",
-                            "icon": "/images/icons/medium/class_rogue.jpg",
+                            "icon": rogueIcon,
                             "max": 1,
                             "enableTree": "rogue",
                             "col": 3,
@@ -153,7 +163,7 @@ export default {
                             "id": "necromancer",
                             "name": "Necromancer",
                             "description": "Skill 13 description",
-                            "icon": "/images/icons/medium/class_warlock.jpg",
+                            "icon": necromancerIcon,
                             "max": 1,
                             "enableTree": "necromancer",
                             "col": 4,
