@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useState } from 'react'
 
 import styled from 'styled-components'
@@ -8,20 +9,18 @@ const TreeWrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
+  position: relative;
 
   z-index: 1;
   box-shadow: 0 5px 10px 0 rgba(0,0,0,1), inset 0 0 20px 0 rgba(255,255,255,0.15);
   border-radius: 3px;
   padding: 24px;
-  background: linear-gradient(#0000009F, #0000009F), url(${props => props.bg});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
   & > h2 {
     text-transform: uppercase;
     font-weight: 500;
     font-size: 18px;
+    margin-bottom: 24px;
   }
 `
 
@@ -70,16 +69,47 @@ const SkillTreeRowWrapper = styled.ul`
   justify-content: center;
 `
 
+const Background = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba(17,17,17,1);
+    
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.75), inset 0 0 20px 0 rgba(255,255,255,0.15);
+        background: linear-gradient(#0000006F, #0000006F);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    img {
+        opacity: 0.12;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+`
 
 export const SpecTree = (props) => {
-    const { spec, totalPoints, setPoints, onCallback } = props
+    const { spec, totalPoints, handleSetTotalPoints, onCallback } = props
 
-    const handleSkillClick = (skill, amt, action) => {
-        if (action === 'add') {
-            setPoints(p => p + amt)
-        } else if (action === 'remove') {
-            setPoints(p => p - amt)
-        }
+    const [points, setPoints] = useState(0)
+
+    const handleSkillClick = (skill, amt) => {
+        setPoints(p => p + amt)
+        handleSetTotalPoints(amt)
     }
 
     const handleCallback = (treeName, action) => {
@@ -89,7 +119,7 @@ export const SpecTree = (props) => {
     const buildRow = (t, idx) => {
         let cols = []
         for (let i = 0; i < t.cols; i++) {
-            const isDisabled = totalPoints < t.points
+            const isDisabled = points < t.points
 
             const skillClasses = []
 
@@ -101,7 +131,7 @@ export const SpecTree = (props) => {
                 cols.push(<IconButton 
                     callback={handleCallback}
                     handleChange={handleSkillClick}
-                    totalPoints={totalPoints}
+                    totalPoints={points}
                     treePoints={t.points}
                     data={colSkill}
                     classes={skillClasses}
@@ -120,9 +150,13 @@ export const SpecTree = (props) => {
 
 
     return (
-        <TreeWrapper bg={spec.background}>
+        <TreeWrapper>
+            <Background>
+                <Image src={spec.background} fill alt="background" />
+            </Background>
+
             <h2>{spec.name}</h2>
-            <br />
+            
             <SkillTreeWrapper>
                 {spec.tree.map(buildRow)}
             </SkillTreeWrapper>

@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import styled from 'styled-components'
 import { Layout } from '../components/Layout'
 import { IconNav } from '../components/parts/IconNav'
 import { SpecTree } from '../components/parts/SpecTree'
+
+import classesJson from '../data/classes'
 
 
 const SpecWrapper = styled.section`
@@ -11,7 +13,7 @@ const SpecWrapper = styled.section`
   flex-flow: column;
   gap: 24px;
   align-items: center;
-  margin: 48px 0;
+  margin: 0 0 48px 0;
 
   &.show {
     display: flex;
@@ -24,7 +26,7 @@ const SpecWrapper = styled.section`
 
 const SpecTreeRow = styled.ul`
   display: flex;
-  flex-flow: row;
+  flex-flow: row-reverse;
   gap: 24px;
   list-style: none;
   width: 100%;
@@ -51,8 +53,7 @@ const IconNavWrapper = styled.div`
   margin: 48px 0;
 `
 
-export default function Home(props) {
-  const { classes } = props.data
+export default function Home({ classes }) {
   
   const [points, setPoints] = useState(0)
   const [activeTrees, setActiveTrees] = useState([])
@@ -78,12 +79,18 @@ export default function Home(props) {
               key={'activeSpec-'+specIdx}
               spec={spec}
               totalPoints={points}
-              setPoints={setPoints} />
+              handleSetTotalPoints={handleSetPoints} />
           ))}
         </SpecTreeRow>
       </SpecWrapper>
     ))
   }
+
+  useEffect(() => {
+    if (activeTrees.length === 1) {
+      setCurrentTree(activeTrees[0])
+    }
+  }, [activeTrees])
 
   const handleTreeClick = (treeName) => {
     setCurrentTree(treeName)
@@ -102,6 +109,10 @@ export default function Home(props) {
     ))
   }
 
+  const handleSetPoints = (amt) => {
+    setPoints(p => p + amt)
+  }
+
   return (
     <Layout>
       <PageTitle>Llama RPG: Skill Calculator</PageTitle>
@@ -111,8 +122,8 @@ export default function Home(props) {
       <SpecTree  
         onCallback={onCallback}
         spec={defaultSpec}
-        totalPoints={points} 
-        setPoints={setPoints} />
+        totalPoints={points}
+        handleSetTotalPoints={handleSetPoints} />
 
       <IconNavWrapper>
         {buildIconNavs()}
@@ -125,13 +136,11 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(context) {
-  // get the json file with the class icons and slugs
-  const res = await fetch('http://localhost:3000/api/classes')
-  const data = await res.json()
 
+  const classes = classesJson
   return {
     props: {
-      data
+      classes
     },
   }
 }

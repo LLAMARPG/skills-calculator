@@ -1,4 +1,6 @@
+import bgImg from '../assets/images/art/llama-group-1.jpg'
 import styled from "styled-components"
+import Image from 'next/image'
 
 const MainWrapper = styled.main`
     width: 100%;
@@ -19,10 +21,6 @@ const MainWrapper = styled.main`
         left: 0;
         width: 100%;
         height: 100%;
-        background:url('/images/art/llama-group-1.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
         opacity: 0.05;
         z-index: 0;
     }
@@ -31,11 +29,28 @@ const MainWrapper = styled.main`
         z-index: 1;
     }
 `
+const Background = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    z-index: 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+`
 
 export const Layout = (props) => {
     const { children } = props
     return (
-        <MainWrapper>
+        <MainWrapper bg={bgImg}>
+            <Background>
+                <Image src={bgImg} alt="background image" fill />
+            </Background>
             {/* TODO: Header */}
             {children}
             {/* TODO: Footer */}
