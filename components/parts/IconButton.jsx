@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const ButtonWrapper = styled.li`
   width: 48px;
   height: 48px;
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -17,6 +17,25 @@ const ButtonWrapper = styled.li`
   background-color: #1a1a1a;
   position: relative;
   box-sizing: border-box;
+
+  &.filled {
+    border: 1px solid #ffd100;
+    p {
+      color: #ffd100;
+    }
+  }
+  &.filling {
+    border: 1px solid chartreuse;
+    p {
+      color: chartreuse;
+    }
+  }
+  &.empty {
+    border: 1px solid #fff;
+    p {
+      color: #fff;
+    }
+  }
   
   &:not(.disabled):hover {
     cursor: pointer;
@@ -48,9 +67,10 @@ const ButtonWrapper = styled.li`
     top: 100%;
     right: 0;
     font-size: 8px;
-    transform: translateY(-150%);
+    transform: translate(40%,-125%);
     z-index: 100;
-    padding: 2px;
+    padding: 2px 3px;
+    border-radius: 3px;
     background-color: #000;
   }
 `
@@ -124,17 +144,25 @@ export const IconButton = (props) => {
         }
     }
 
+    let buttonClasses = []
+
+    if (points > 0 && points < max) buttonClasses.push('filling')
+    if (points === max) buttonClasses.push('filled')
+    if (points === 0) buttonClasses.push('empty')
+
+    buttonClasses = [...buttonClasses, ...classes]
+
     return (<ButtonWrapper
       onMouseEnter={handleMouseEnter} 
       onMouseLeave={handleMouseLeave} 
       onClick={handleButtonClick} 
-      className={classes.join(' ')}>
+      className={buttonClasses.join(' ')}>
       <Image src={icon} alt={name} fill />
-        {active && <p>{points}/{max}</p>}
-        {isHovered && <Tooltip>
-          <TooltipTitle>{name}</TooltipTitle>
-          <TooltipRank>Rank {points}/{max}</TooltipRank>
-          <TooltipDescription>{description}</TooltipDescription>
-        </Tooltip>}
+      {active && <p>{points}/{max}</p>}
+      {isHovered && <Tooltip>
+        <TooltipTitle>{name}</TooltipTitle>
+        <TooltipRank>Rank {points}/{max}</TooltipRank>
+        <TooltipDescription>{description}</TooltipDescription>
+      </Tooltip>}
     </ButtonWrapper>)
 }
