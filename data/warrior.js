@@ -359,7 +359,7 @@ export default {
                             "name": "Dual Strength",
                             "description": "When Attacking with Matching Weapon Bases Gain 10% More Damage",
                             "icon": warriorIcon,
-                            "max": 1,
+                            "max": 5,
                             "col": 2,
                             "dependencies": []
                         },

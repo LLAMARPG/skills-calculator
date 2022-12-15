@@ -353,7 +353,7 @@ export default {
                             "name": "Elemental Casting",
                             "description": "When Using 3 Spells in One Turn Gain 25% All Resist Until End of Turn",
                             "icon": mageIcon,
-                            "max": 1,
+                            "max": 5,
                             "col": 0,
                             "dependencies": []
                         },
