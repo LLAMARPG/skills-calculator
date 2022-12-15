@@ -75,7 +75,7 @@ export default {
                     ]
                 },
                 {
-                    "points": 15,
+                    "points": 10,
                     "cols": 3,
                     "skills": [
                         {
