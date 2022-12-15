@@ -2,12 +2,17 @@ import {
     defaultIcon,
     warriorIcon,
     mageIcon,
-    /* necromancerIcon,
-    paladinIcon,
-    rogueIcon, */
     rangerIcon,
-    treeBg
+    treeBg,
+
+    kickIcon,
+    spitIcon,
+    healIcon,
+    digInHoovesIcon,
+    sharpenHoovesIcon
+
 } from "./icons"
+
 
 export default {
     "name": "default",
@@ -25,7 +30,7 @@ export default {
                             "id": "ll1",
                             "name": "Spit",
                             "description": "Deal 3 to 8 Random Element Range Damage to Enemy",
-                            "icon": defaultIcon,
+                            "icon": spitIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -34,7 +39,7 @@ export default {
                             "id": "ll2",
                             "name": "Kick",
                             "description": "Deal 5 to 6 Random Element Melee Damage to Enemy",
-                            "icon": defaultIcon,
+                            "icon": kickIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -49,7 +54,7 @@ export default {
                             "id": "ll3",
                             "name": "Heal",
                             "description": "Heal 10 Life",
-                            "icon": defaultIcon,
+                            "icon": healIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -58,7 +63,7 @@ export default {
                             "id": "ll4",
                             "name": "Sharpen Hooves",
                             "description": "Gain 20% More Melee Damage this Turn",
-                            "icon": defaultIcon,
+                            "icon": sharpenHoovesIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -67,7 +72,7 @@ export default {
                             "id": "ll5",
                             "name": "Dig in Hooves",
                             "description": "Take 50% Less Melee Damage this Turn",
-                            "icon": defaultIcon,
+                            "icon": digInHoovesIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
