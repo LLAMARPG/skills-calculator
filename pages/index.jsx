@@ -63,12 +63,12 @@ export default function Home({ classes }) {
   const defaultSpec = defaultTree.specializations[0]
 
   const onCallback = (treeName, action) => {
-    if (action === 'add') setActiveTrees(a => [...a, treeName])
+    if (action === 'add' && !activeTrees.includes(treeName)) setActiveTrees(a => [...a, treeName])
     if (action === 'remove') setActiveTrees(a => a.filter(t => t !== treeName))
   }
 
   const buildActiveTrees = () => {
-    const trees = classes.filter(c => activeTrees.includes(c.name))
+    const trees = activeTrees.map(t => classes.find(c => c.name === t))
     return trees.map((tree,idx) => (
       <SpecWrapper key={'activeTree-'+idx} className={currentTree === tree.name ? 'show' : 'hide'}>
         <h3>{tree.name}</h3>
@@ -97,7 +97,7 @@ export default function Home({ classes }) {
   }
 
   const buildIconNavs = () => {
-    const trees = classes.filter(c => activeTrees.includes(c.name))
+    const trees = activeTrees.map(t => classes.find(c => c.name === t))
     return trees.map((tree,idx) => (
       <IconNav
         key={'iconNav-'+idx}

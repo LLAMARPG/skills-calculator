@@ -2,9 +2,10 @@ import {
     defaultIcon,
     warriorIcon,
     mageIcon,
-    necromancerIcon,
+    /* necromancerIcon,
     paladinIcon,
-    rogueIcon,
+    rogueIcon, */
+    rangerIcon,
     treeBg
 } from "./icons"
 
@@ -13,40 +14,31 @@ export default {
     "icon": defaultIcon,
     "specializations": [
         {
-            "name": "default",
+            "name": "llama",
             "background": treeBg,
             "tree": [
                 {
                     "points": 0,
-                    "cols": 3,
+                    "cols": 2,
                     "skills": [
                         {
-                            "id": "skill1",
-                            "name": "Skill 1",
-                            "description": "Skill 1 description",
+                            "id": "ll1",
+                            "name": "Spit",
+                            "description": "Deal 3 to 8 Random Element Range Damage to Enemy",
                             "icon": defaultIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
                         },
                         {
-                            "id": "skill2",
-                            "name": "Skill 2",
-                            "description": "Skill 2 description",
+                            "id": "ll2",
+                            "name": "Kick",
+                            "description": "Deal 5 to 6 Random Element Melee Damage to Enemy",
                             "icon": defaultIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
                         },
-                        {
-                            "id": "skill3",
-                            "name": "Skill 3",
-                            "description": "Skill 3 description",
-                            "icon": defaultIcon,
-                            "max": 5,
-                            "col": 2,
-                            "dependencies": []
-                        }
                     ]
                 },
                 {
@@ -54,60 +46,27 @@ export default {
                     "cols": 3,
                     "skills": [
                         {
-                            "id": "skill4",
-                            "name": "Skill 4",
-                            "description": "Skill 4 description",
+                            "id": "ll3",
+                            "name": "Heal",
+                            "description": "Heal 10 Life",
                             "icon": defaultIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
                         },
                         {
-                            "id": "skill5",
-                            "name": "Skill 5",
-                            "description": "Skill 5 description",
+                            "id": "ll4",
+                            "name": "Sharpen Hooves",
+                            "description": "Gain 20% More Melee Damage this Turn",
                             "icon": defaultIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
                         },
                         {
-                            "id": "skill6",
-                            "name": "Skill 6",
-                            "description": "Skill 6 description",
-                            "icon": defaultIcon,
-                            "max": 5,
-                            "col": 2,
-                            "dependencies": []
-                        }
-                    ]
-                },
-                {
-                    "points": 10,
-                    "cols": 3,
-                    "skills": [
-                        {
-                            "id": "skill7",
-                            "name": "Skill 7",
-                            "description": "Skill 7 description",
-                            "icon": defaultIcon,
-                            "max": 5,
-                            "col": 0,
-                            "dependencies": []
-                        },
-                        {
-                            "id": "skill8",
-                            "name": "Skill 8",
-                            "description": "Skill 8 description",
-                            "icon": defaultIcon,
-                            "max": 5,
-                            "col": 1,
-                            "dependencies": []
-                        },
-                        {
-                            "id": "skill9",
-                            "name": "Skill 9",
-                            "description": "Skill 9 description",
+                            "id": "ll5",
+                            "name": "Dig in Hooves",
+                            "description": "Take 50% Less Melee Damage this Turn",
                             "icon": defaultIcon,
                             "max": 5,
                             "col": 2,
@@ -117,12 +76,12 @@ export default {
                 },
                 {
                     "points": 15,
-                    "cols": 5,
+                    "cols": 3,
                     "skills": [
                         {
-                            "id": "warrior",
+                            "id": "ll6",
                             "name": "Warrior",
-                            "description": "Skill 10 description",
+                            "description": "Unlock the Warrior Tree",
                             "icon": warriorIcon,
                             "max": 1,
                             "enableTree": "warrior",
@@ -130,9 +89,9 @@ export default {
                             "dependencies": []
                         },
                         {
-                            "id": "mage",
+                            "id": "ll7",
                             "name": "Mage",
-                            "description": "Skill 11 description",
+                            "description": "Unlock the Mage Tree",
                             "icon": mageIcon,
                             "max": 1,
                             "enableTree": "mage",
@@ -140,6 +99,16 @@ export default {
                             "dependencies": []
                         },
                         {
+                            "id": "ll8",
+                            "name": "Ranger",
+                            "description": "Unlock the Ranger Tree",
+                            "icon": rangerIcon,
+                            "max": 1,
+                            "enableTree": "ranger",
+                            "col": 2,
+                            "dependencies": []
+                        },
+                        /* {
                             "id": "paladin",
                             "name": "Paladin",
                             "description": "Skill 12 description",
@@ -168,7 +137,7 @@ export default {
                             "enableTree": "necromancer",
                             "col": 4,
                             "dependencies": []
-                        }
+                        } */
                     ]
                 }
             ]

@@ -28,6 +28,7 @@ const SkillWrapper = styled.li`
   width: 48px;
   height: 48px;
   border: ${props => props.isBlank ? '1px solid rgba(0,0,0,0)' : '1px solid #fff'};
+  opacity: ${props => props.isBlank ? '0' : '1'};
   border-radius: 3px;
   display: flex;
   align-items: center;

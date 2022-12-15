@@ -1,15 +1,17 @@
 import defaultData from './default'
 import mageData from './mage'
-import rogueData from './rogue'
+import rangerData from './ranger'
 import warriorData from './warrior'
+/* import rogueData from './rogue'
 import paladinData from './paladin'
-import necromancerData from './necromancer'
+import necromancerData from './necromancer' */
 
 export default [
     defaultData,
     warriorData,
     mageData,
-    paladinData,
-    rogueData,
-    necromancerData,
+    rangerData,
+    /* paladinData, */
+    /* rogueData, */
+    /* necromancerData, */
 ]
