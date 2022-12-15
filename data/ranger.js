@@ -359,7 +359,7 @@ export default {
                             "name": "Second Chance",
                             "description": "Your Evasion also works when Countered",
                             "icon": rangerIcon,
-                            "max": 1,
+                            "max": 5,
                             "col": 0,
                             "dependencies": []
                         },
