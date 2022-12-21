@@ -1,6 +1,5 @@
 import {
-    rangerIcon,
-    treeBg
+    rangerIcon
 } from "./icons"
 
 import frigidarrowIcon from "../assets/images/skills/ranger/frigidarrow.jpg"
@@ -34,13 +33,17 @@ import elementofsurpriseIcon from "../assets/images/skills/ranger/elementofsurpr
 import drivingshotIcon from "../assets/images/skills/ranger/drivingshot.jpg"
 import secondchanceIcon from "../assets/images/skills/ranger/secondchance.jpg"
 
+import treebg1 from '../assets/images/skills/ranger/treebg1.jpg'
+import treebg2 from '../assets/images/skills/ranger/treebg2.jpg'
+import treebg3 from '../assets/images/skills/ranger/treebg3.jpg'
+
 export default {
     "name": "ranger",
     "icon": rangerIcon,
     "specializations": [
         {
             "name": "1",
-            "background": treeBg,
+            "background": treebg1,
             "tree": [
                 {
                     "points": 0,
@@ -160,7 +163,7 @@ export default {
         },
         {
             "name": "2",
-            "background": treeBg,
+            "background": treebg2,
             "tree": [
                 {
                     "points": 0,
@@ -280,7 +283,7 @@ export default {
         },
         {
             "name": "3",
-            "background": treeBg,
+            "background": treebg3,
             "tree": [
                 {
                     "points": 0,

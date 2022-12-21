@@ -1,6 +1,5 @@
 import {
-    warriorIcon,
-    treeBg
+    warriorIcon
 } from "./icons"
 
 // warrior skills
@@ -35,6 +34,10 @@ import toughIcon from "../assets/images/skills/warrior/tough.jpg"
 import toxicSpitIcon from "../assets/images/skills/warrior/toxicspit.jpg"
 import woolyCoatIcon from "../assets/images/skills/warrior/woolycoat.jpg"
 
+import treebg1 from '../assets/images/skills/warrior/treebg1.jpg'
+import treebg2 from '../assets/images/skills/warrior/treebg2.jpg'
+import treebg3 from '../assets/images/skills/warrior/treebg3.jpg'
+
 
 export default {
     "name": "warrior",
@@ -42,7 +45,7 @@ export default {
     "specializations": [
         {
             "name": "1",
-            "background": treeBg,
+            "background": treebg1,
             "tree": [
                 {
                     "points": 0,
@@ -162,7 +165,7 @@ export default {
         },
         {
             "name": "2",
-            "background": treeBg,
+            "background": treebg2,
             "tree": [
                 {
                     "points": 0,
@@ -282,7 +285,7 @@ export default {
         },
         {
             "name": "3",
-            "background": treeBg,
+            "background": treebg3,
             "tree": [
                 {
                     "points": 0,
