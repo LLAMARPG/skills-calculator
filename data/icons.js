@@ -1,4 +1,4 @@
-import defaulticon from "../assets/images/icons/medium/spell_fire_fire.jpg"
+import defaulticon from "../assets/images/icons/class_llama.jpg"
 import warrioricon from "../assets/images/icons/class_warrior.jpg"
 import mageicon from "../assets/images/icons/class_mage.jpg"
 import rangericon from "../assets/images/icons/class_ranger.jpg"
