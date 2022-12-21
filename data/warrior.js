@@ -194,22 +194,22 @@ export default {
                         {
                             "id": "w12",
                             "name": "Impress",
-                            "description": (min,max) => `If you successfully countered this Turn, Heal 3% Max Life`,
+                            "description": (min,max) => `If you successfully countered this Turn, Heal ${min}% Max Life`,
                             "icon": impressIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min((3 + Math.max(slvl - 1, 0)), 5),Math.min((3 + Math.max(slvl - 1, 0)), 5)]
                         },
                         {
                             "id": "w13",
                             "name": "Hardened Strike",
-                            "description": (min,max) => `If you Attack First this Turn, Double your Defense until the end of Turn`,
+                            "description": (min,max) => `If you Attack First this Turn, increase your Defense by ${min}% until end of Turn`,
                             "icon": hardenedStrikeIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min((20 + Math.max(slvl - 1, 0) * 5), 30),Math.min((20 + Math.max(slvl - 1, 0) * 5), 30)]
                         }
                     ]
                 },
@@ -220,12 +220,12 @@ export default {
                         {
                             "id": "w14",
                             "name": "Burning Up",
-                            "description": (min,max) => `You Cannot be Frozen for 3 Turns`,
+                            "description": (min,max) => `You Cannot be Frozen for ${min} Turns`,
                             "icon": burningUpIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min((1 + Math.max(slvl - 1, 0)), 3),Math.min((1 + Math.max(slvl - 1, 0)), 3)]
                         },
                         {
                             "id": "w15",
@@ -235,17 +235,17 @@ export default {
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                         {
                             "id": "w16",
                             "name": "Harden",
-                            "description": (min,max) => `Your Shield gains 50% More Elemental Defense`,
+                            "description": (min,max) => `Your Shield gains ${min}% More Elemental Defense`,
                             "icon": hardenIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(1 + Math.max(slvl - 1, 0)) * 10,(1 + Math.max(slvl - 1, 0)) * 10]
                         }
                     ]
                 },
@@ -261,27 +261,27 @@ export default {
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(10 + Math.max(slvl - 1, 0) * 3),(10 + Math.max(slvl - 1, 0) * 3)]
                         },
                         {
                             "id": "w18",
                             "name": "Bulk Up",
-                            "description": (min,max) => `Increase Defense by 100% Until the end of Turn`,
+                            "description": (min,max) => `Increase Defense by ${min}% Until the end of Turn`,
                             "icon": bulkupIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [50,50]
                         },
                         {
                             "id": "w19",
                             "name": "Reflection Roulette",
-                            "description": (min,max) => `Reflect 50% of a random Damage Type this Turn`,
+                            "description": (min,max) => `Reflect ${min}% of a random Damage Type this Turn`,
                             "icon": reflectionRouletteIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(25 + Math.max(slvl - 1, 0) * 5),(25 + Math.max(slvl - 1, 0) * 5)]
                         }
                     ]
                 },
@@ -297,7 +297,7 @@ export default {
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(30 + Math.max(slvl - 1, 0) * 10),(30 + Math.max(slvl - 1, 0) * 10)]
                         },
                     ]
                 }
@@ -319,27 +319,27 @@ export default {
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(3 + Math.max(slvl - 1, 0) * 3),(3 + Math.max(slvl - 1, 0) * 3)]
                         },
                         {
                             "id": "w22",
                             "name": "Tough",
-                            "description": (min,max) => `Decrease Chance to Bleed/Stagger by 50%`,
+                            "description": (min,max) => `Decrease Chance to Bleed/Stagger by ${min}%`,
                             "icon": toughIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min((30 + Math.max(slvl - 1, 0) * 10), 50),Math.min((30 + Math.max(slvl - 1, 0) * 10), 50)]
                         },
                         {
                             "id": "w23",
                             "name": "Frenzy",
-                            "description": (min,max) => `When Attacking with Matching Weapon Bases Gain 20 Attack Speed`,
+                            "description": (min,max) => `When Attacking with Matching Weapon Bases Gain ${min} Attack Speed`,
                             "icon": frenzyIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(10 + Math.max(slvl - 1, 0) * 5),(10 + Math.max(slvl - 1, 0) * 5)]
                         }
                     ]
                 },
@@ -350,32 +350,32 @@ export default {
                         {
                             "id": "w24",
                             "name": "Body Armor",
-                            "description": (min,max) => `All Armor provides 2x Defense`,
+                            "description": (min,max) => `All Armor provides ${min}% More Defense`,
                             "icon": bodyArmorIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(50 + Math.max(slvl - 1, 0) * 10),(50 + Math.max(slvl - 1, 0) * 10)]
                         },
                         {
                             "id": "w25",
                             "name": "Stone Skin",
-                            "description": (min,max) => `Gain 10 Defense`,
+                            "description": (min,max) => `Gain ${min} Defense`,
                             "icon": stonekinIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(4 + Math.max(slvl - 1, 0) * 4),(4 + Math.max(slvl - 1, 0) * 4)]
                         },
                         {
                             "id": "w26",
                             "name": "Refueled",
-                            "description": (min,max) => `When you take 0 damage, Heal 6% Max Life`,
+                            "description": (min,max) => `When you take 0 damage, Heal ${min}% Max Life`,
                             "icon": refueledIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(1 + Math.max(slvl - 1, 0)),(1 + Math.max(slvl - 1, 0))]
                         }
                     ]
                 },
@@ -386,32 +386,32 @@ export default {
                         {
                             "id": "w27",
                             "name": "Life Blood",
-                            "description": (min,max) => `Gain 20 Life`,
+                            "description": (min,max) => `Gain ${min} Life`,
                             "icon": lifeBloodIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(10 + Math.max(slvl - 1, 0) * 5),(10 + Math.max(slvl - 1, 0) * 5)]
                         },
                         {
                             "id": "w28",
                             "name": "Nature's Resist",
-                            "description": (min,max) => `Gain 5% All Resist`,
+                            "description": (min,max) => `Gain ${min}% All Resist`,
                             "icon": naturesResistIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(1 + Math.max(slvl - 1, 0)),(1 + Math.max(slvl - 1, 0))]
                         },
                         {
                             "id": "w29",
                             "name": "Last Stand",
-                            "description": (min,max) => `Gain 30% More Damage when under 10% Max Life`,
+                            "description": (min,max) => `Gain ${min}% More Damage when under 10% Max Life`,
                             "icon": lastStandIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(15 + Math.max(slvl - 1, 0) * 5),(15 + Math.max(slvl - 1, 0) * 5)]
                         }
                     ]
                 },
@@ -422,12 +422,12 @@ export default {
                         {
                             "id": "w30",
                             "name": "Dual Strength",
-                            "description": (min,max) => `When Attacking with Matching Weapon Bases Gain 10% More Damage`,
+                            "description": (min,max) => `When Attacking with Matching Weapon Bases Gain ${min}% More Damage`,
                             "icon": dualStrengthIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(10 + Math.max(slvl - 1, 0) * 2.5),(10 + Math.max(slvl - 1, 0) * 2.5)]
                         },
                     ]
                 }
