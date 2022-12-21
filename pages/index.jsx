@@ -53,7 +53,8 @@ const IconNavWrapper = styled.div`
   margin: 48px 0;
 `
 
-export default function Home({ classes }) {
+export default function Home() {
+  const classes = classesJson
   
   const [points, setPoints] = useState(0)
   const [activeTrees, setActiveTrees] = useState([])
@@ -135,7 +136,7 @@ export default function Home({ classes }) {
   )
 }
 
-export async function getStaticProps(context) {
+/* export async function getStaticProps(context) {
 
   const classes = classesJson
   return {
@@ -143,4 +144,4 @@ export async function getStaticProps(context) {
       classes
     },
   }
-}
+} */
