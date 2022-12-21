@@ -158,7 +158,9 @@ export const IconButton = (props) => {
     buttonClasses = [...buttonClasses, ...classes]
 
     const [skillMin, skillMax] = formula(points,totalPoints,{})
-    const skillDescription = description(skillMin, skillMax)
+    const normSM = Math.floor(skillMin * 100) / 100
+    const normSX = Math.floor(skillMax * 100) / 100
+    const skillDescription = description(normSM, normSX)
 
     const [nextSkillMin, nextSkillMax] = formula(points+1,totalPoints+1,{})
     const normNSM = Math.floor(nextSkillMin * 100) / 100
