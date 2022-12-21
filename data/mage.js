@@ -1,6 +1,5 @@
 import {
-    mageIcon,
-    treeBg
+    mageIcon
 } from "./icons"
 
 import fireballIcon from '../assets/images/skills/mage/fireball.jpg'
@@ -34,13 +33,17 @@ import thoughtfulmindIcon from '../assets/images/skills/mage/thoughtfulmind.jpg'
 import stripbuffsIcon from '../assets/images/skills/mage/stripbuffs.jpg'
 import elementalcastingIcon from '../assets/images/skills/mage/elementalcasting.jpg'
 
+import treebg1 from '../assets/images/skills/mage/treebg1.jpg'
+import treebg2 from '../assets/images/skills/mage/treebg2.jpg'
+import treebg3 from '../assets/images/skills/mage/treebg3.jpg'
+
 export default {
     "name": "mage",
     "icon": mageIcon,
     "specializations": [
         {
             "name": "1",
-            "background": treeBg,
+            "background": treebg1,
             "tree": [
                 {
                     "points": 0,
@@ -160,7 +163,7 @@ export default {
         },
         {
             "name": "2",
-            "background": treeBg,
+            "background": treebg2,
             "tree": [
                 {
                     "points": 0,
@@ -274,7 +277,7 @@ export default {
         },
         {
             "name": "3",
-            "background": treeBg,
+            "background": treebg3,
             "tree": [
                 {
                     "points": 0,
