@@ -52,32 +52,32 @@ export default {
                         {
                             "id": "r1",
                             "name": "Frigid Arrow",
-                            "description": (min,max) => `Next Ranged Attack Doubles Weapon Cold Damage`,
+                            "description": (min,max) => `Next Ranged Attack increases Weapon Cold Damage by ${min}%`,
                             "icon": frigidarrowIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(10 + Math.max(slvl - 1, 0) * 10), (10 + Math.max(slvl - 1, 0) * 10)]
                         },
                         {
                             "id": "r2",
                             "name": "Guiding Light",
-                            "description": (min,max) => `Next Ranged Attack Doubles Weapon Electric Damage`,
+                            "description": (min,max) => `Next Ranged Attack increases Weapon Electric Damage by ${min}%`,
                             "icon": guidinglightIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(10 + Math.max(slvl - 1, 0) * 10), (10 + Math.max(slvl - 1, 0) * 10)]
                         },
                         {
                             "id": "r3",
                             "name": "Rain of Arrows",
-                            "description": (min,max) => `Next Ranged Attack randomly doubles one Weapon Damage Type`,
+                            "description": (min,max) => `Next Ranged Attack increases one random Weapon Damage Type by ${min}%`,
                             "icon": rainofarrowsIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(10 + Math.max(slvl - 1, 0) * 10), (10 + Math.max(slvl - 1, 0) * 10)]
                         }
                     ]
                 },
@@ -88,32 +88,32 @@ export default {
                         {
                             "id": "r4",
                             "name": "Frigid Fury",
-                            "description": (min,max) => `Add 6 to 8 Water Damage to your next Attack`,
+                            "description": (min,max) => `Add ${min} to ${max} Water Damage to your next Attack`,
                             "icon": frigidfuryIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [6 + Math.max(slvl - 1, 0) + (0.1 + 0.04 * Math.max(slvl - 1, 0)) * lvl, 8 + Math.max(slvl - 1, 0) + (0.1 + 0.04 * Math.max(slvl - 1, 0)) * lvl]
                         },
                         {
                             "id": "r5",
                             "name": "Piercing Light",
-                            "description": (min,max) => `Add 5 to 8 Spark Damage to your next Attack`,
+                            "description": (min,max) => `Add ${min} to ${max} Spark Damage to your next Attack`,
                             "icon": piercinglightIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [4 + Math.max(slvl - 1, 0) + (0.11 + 0.04 * Math.max(slvl - 1, 0)) * lvl, 9 + Math.max(slvl - 1, 0) + (0.11 + 0.04 * Math.max(slvl - 1, 0)) * lvl]
                         },
                         {
                             "id": "r6",
                             "name": "Rain of Death",
-                            "description": (min,max) => `Next Ranged Attack Doubles All Weapon Damage`,
+                            "description": (min,max) => `Next Ranged Attack increases Weapon Damage ${min}%`,
                             "icon": rainofdeathIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min(50,(20 + Math.max(slvl - 1, 0) * 10)), Math.min(50,(20 + Math.max(slvl - 1, 0) * 10))]
                         }
                     ]
                 },
@@ -124,32 +124,32 @@ export default {
                         {
                             "id": "r7",
                             "name": "Freezing Arrow",
-                            "description": (min,max) => `Increase enemy Chance to Freeze to 100%`,
+                            "description": (min,max) => `Increase enemy Chance to Freeze to ${min}%`,
                             "icon": freezingarrowIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                         {
                             "id": "r8",
                             "name": "Ray of Sun",
-                            "description": (min,max) => `Deal 13 to 15 Lightning Damage`,
+                            "description": (min,max) => `Deal ${min} to ${max} Lightning Damage`,
                             "icon": rayofsunIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [13 + Math.max(slvl - 1, 0) + (0.05 + 0.06 * Math.max(slvl - 1, 0)) * lvl, 15 + Math.max(slvl - 1, 0) + (0.05 + 0.06 * Math.max(slvl - 1, 0)) * lvl]
                         },
                         {
                             "id": "r9",
                             "name": "Spitting Image",
-                            "description": (min,max) => `Create a Clone of yourself that copies your Attacks at 50% Power Until End of Turn`,
+                            "description": (min,max) => `Create a Clone of yourself that copies your Attacks at ${min}% Power Until End of Turn`,
                             "icon": spittingimageIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(15 + Math.max(slvl - 1, 0) * 8), (15 + Math.max(slvl - 1, 0) * 8)]
                         }
                     ]
                 },
@@ -160,12 +160,12 @@ export default {
                         {
                             "id": "r10",
                             "name": "Shining Beam",
-                            "description": (min,max) => `Deal (Dex-Enemy Dex) Lightning Damage to Enemy`,
+                            "description": (min,max) => `Deal (${min}% Dex-Enemy Dex) Lightning Damage to Enemy (Can't be negative)`,
                             "icon": shiningbeamIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min(100,(80 + Math.max(slvl - 1, 0) * 10)), Math.min(100,(80 + Math.max(slvl - 1, 0) * 10))]
                         },
                     ]
                 }
@@ -182,22 +182,22 @@ export default {
                         {
                             "id": "r11",
                             "name": "Jump Around",
-                            "description": (min,max) => `Gain 50% more Evasion this Turn`,
+                            "description": (min,max) => `Gain ${min}% more Evasion this Turn`,
                             "icon": jumparoundIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(33 + Math.max(slvl - 1, 0) * 7), (33 + Math.max(slvl - 1, 0) * 7)]
                         },
                         {
                             "id": "r12",
                             "name": "Frozen Pulse",
-                            "description": (min,max) => `Slow Enemy by 50% Next Turn`,
+                            "description": (min,max) => `Slow Enemy by ${min}% Next Turn`,
                             "icon": frozenpulseIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(20 + Math.max(slvl - 1, 0) * 6), (20 + Math.max(slvl - 1, 0) * 6)]
                         },
                         {
                             "id": "r13",
@@ -207,7 +207,7 @@ export default {
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         }
                     ]
                 },
@@ -218,12 +218,12 @@ export default {
                         {
                             "id": "r14",
                             "name": "Hyper Action",
-                            "description": (min,max) => `Gain 20 Attack Speed for 2 Turns`,
+                            "description": (min,max) => `Gain ${min} Attack Speed for 2 Turns`,
                             "icon": hyperactionIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min(20,(10 + Math.max(slvl - 1, 0) * 5)),Math.min(20,(10 + Math.max(slvl - 1, 0) * 5))]
                         },
                         {
                             "id": "r15",
@@ -233,17 +233,17 @@ export default {
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                         {
                             "id": "r16",
                             "name": "Hunker Down",
-                            "description": (min,max) => `Decrease Your Speed by 20, Double your Defense until end of Next Turn`,
+                            "description": (min,max) => `Decrease Your Speed by 20, Increase your Defense by ${min}%`,
                             "icon": hunkerdownIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min(80,(50 + Math.max(slvl - 1, 0) * 10)),Math.min(80,(50 + Math.max(slvl - 1, 0) * 10))]
                         }
                     ]
                 },
@@ -254,12 +254,12 @@ export default {
                         {
                             "id": "r17",
                             "name": "Divine Light",
-                            "description": (min,max) => `Gain Life Equal to Electric Damage dealt this Turn`,
+                            "description": (min,max) => `Gain Life Equal to ${min}% Electric Damage dealt this Turn`,
                             "icon": divinelightIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(45 + Math.max(slvl - 1, 0) * 9), (10 + Math.max(slvl - 1, 0) * 10)]
                         },
                         {
                             "id": "r18",
@@ -269,17 +269,17 @@ export default {
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                         {
                             "id": "r19",
                             "name": "Inner Thoughts",
-                            "description": (min,max) => `Heal yourself (Dex)`,
+                            "description": (min,max) => `Heal yourself (${min}% Dex)`,
                             "icon": innerthoughtsIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(30 + Math.max(slvl - 1, 0) * 5), (30 + Math.max(slvl - 1, 0) * 5)]
                         }
                     ]
                 },
@@ -295,7 +295,7 @@ export default {
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                     ]
                 }
@@ -312,32 +312,32 @@ export default {
                         {
                             "id": "r21",
                             "name": "Agile",
-                            "description": (min,max) => `Gain 5 Agility`,
+                            "description": (min,max) => `Gain ${min} Agility`,
                             "icon": agileIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(3 + Math.max(slvl - 1, 0) * 3), (3 + Math.max(slvl - 1, 0) * 3)]
                         },
                         {
                             "id": "r22",
                             "name": "Quick Resist",
-                            "description": (min,max) => `When you Attack First, gain 5% All Resist That Turn`,
+                            "description": (min,max) => `When you Attack First, gain ${min}% All Resist That Turn`,
                             "icon": quickresistIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min(5,3 + Math.max(slvl - 1, 0)), Math.min(5,3 + Math.max(slvl - 1, 0) * 3)]
                         },
                         {
                             "id": "r23",
                             "name": "Quick Lock",
-                            "description": (min,max) => `Gain 20 more Attack Speed when not using a Shield`,
+                            "description": (min,max) => `Gain ${min} more Attack Speed when not using a Shield`,
                             "icon": quicklockIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min(15,6 + Math.max(slvl - 1, 0) * 3), Math.min(15,6 + Math.max(slvl - 1, 0) * 3)]
                         }
                     ]
                 },
@@ -348,32 +348,32 @@ export default {
                         {
                             "id": "r24",
                             "name": "Fine Tuned",
-                            "description": (min,max) => `Gain 5 Dexterity`,
+                            "description": (min,max) => `Gain ${min} Dexterity`,
                             "icon": finetunedIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(3 + Math.max(slvl - 1, 0) * 3), (3 + Math.max(slvl - 1, 0) * 3)]
                         },
                         {
                             "id": "r25",
                             "name": "Double Strike",
-                            "description": (min,max) => `When you Attack First, gain 5% Chance for an Attack to hit twice`,
+                            "description": (min,max) => `When you Attack First, gain ${min}% Chance for an Attack to hit twice`,
                             "icon": doublestrikeIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(1 + Math.max(slvl - 1, 0)), (1 + Math.max(slvl - 1, 0))]
                         },
                         {
                             "id": "r26",
                             "name": "On the Move",
-                            "description": (min,max) => `Gain 10% more Evasion when not using a Shield`,
+                            "description": (min,max) => `Gain ${min}% more Evasion when not using a Shield`,
                             "icon": onthemoveIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min(11,5 + Math.max(slvl - 1, 0) * 3), Math.min(11,5 + Math.max(slvl - 1, 0) * 3)]
                         }
                     ]
                 },
@@ -384,32 +384,32 @@ export default {
                         {
                             "id": "r27",
                             "name": "Light Footed",
-                            "description": (min,max) => `Gain 10% Evasion`,
+                            "description": (min,max) => `Gain ${min}% Evasion`,
                             "icon": lightfootedIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(3 + Math.max(slvl - 1, 0) * 3), (3 + Math.max(slvl - 1, 0) * 3)]
                         },
                         {
                             "id": "r28",
                             "name": "Element of Surprise",
-                            "description": (min,max) => `When you Attack First increase Chance of Ailment by 10%`,
+                            "description": (min,max) => `When you Attack First increase Chance of Ailment by ${min}%`,
                             "icon": elementofsurpriseIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(2 + Math.max(slvl - 1, 0) * 2), (2 + Math.max(slvl - 1, 0) * 2)]
                         },
                         {
                             "id": "r29",
                             "name": "Driving Shot",
-                            "description": (min,max) => `Gain 10% more Damage when not using a Shield`,
+                            "description": (min,max) => `Gain ${min}% more Damage when not using a Shield`,
                             "icon": drivingshotIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(1 + Math.max(slvl - 1, 0)), (1 + Math.max(slvl - 1, 0))]
                         }
                     ]
                 },
@@ -425,7 +425,7 @@ export default {
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                     ]
                 }
