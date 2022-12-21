@@ -102,7 +102,7 @@ export default {
                             "name": "Bulldoze",
                             "description": (min,max) => `If your Enemy uses Counter this Turn, Stagger them`,
                             "icon": bullDozeIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -110,9 +110,9 @@ export default {
                         {
                             "id": "w6",
                             "name": "Poison Tipped",
-                            "description": (min,max) => `Add 7 Venom Damage to Next Attack`,
+                            "description": (min,max) => `Add ${min} Venom Damage to Next Attack`,
                             "icon": psnTipIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [(7 + Math.max(slvl - 1, 0)) + ((0.1 + (0.06 * Math.max(slvl - 1, 0))) * lvl),(7 + Math.max(slvl - 1, 0)) + ((0.1 + (0.06 * Math.max(slvl - 1, 0))) * lvl)]
@@ -128,7 +128,7 @@ export default {
                             "name": "Fire Battle",
                             "description": (min,max) => `Deal (${min}% Str-Enemy Str) Burn Damage to Enemy (Can't be negative)`,
                             "icon": fireBattleIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 0,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((8 + Math.max(slvl - 1, 0)) * 10, 100),Math.min((8 + Math.max(slvl - 1, 0)) * 10, 100)]
@@ -138,7 +138,7 @@ export default {
                             "name": "Da Bomb",
                             "description": (min,max) => `Next Melee Attack increases Weapon Damage ${min}%`,
                             "icon": dabombIcon,
-                            "max": 5,
+                            "max": 4,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((2 + Math.max(slvl - 1, 0)) * 10, 50),Math.min((8 + Math.max(slvl - 1, 0)) * 10, 50)]
@@ -164,7 +164,7 @@ export default {
                             "name": "Shout",
                             "description": (min,max) => `Lower Enemy Defense by ${75}% This Turn`,
                             "icon": shoutIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [75,75]
@@ -196,7 +196,7 @@ export default {
                             "name": "Impress",
                             "description": (min,max) => `If you successfully countered this Turn, Heal ${min}% Max Life`,
                             "icon": impressIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((3 + Math.max(slvl - 1, 0)), 5),Math.min((3 + Math.max(slvl - 1, 0)), 5)]
@@ -206,7 +206,7 @@ export default {
                             "name": "Hardened Strike",
                             "description": (min,max) => `If you Attack First this Turn, increase your Defense by ${min}% until end of Turn`,
                             "icon": hardenedStrikeIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((20 + Math.max(slvl - 1, 0) * 5), 30),Math.min((20 + Math.max(slvl - 1, 0) * 5), 30)]
@@ -222,7 +222,7 @@ export default {
                             "name": "Burning Up",
                             "description": (min,max) => `You Cannot be Frozen for ${min} Turns`,
                             "icon": burningUpIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 0,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((1 + Math.max(slvl - 1, 0)), 3),Math.min((1 + Math.max(slvl - 1, 0)), 3)]
@@ -232,7 +232,7 @@ export default {
                             "name": "Concentration",
                             "description": (min,max) => `Your Next Action cannot be Countered or Interrupted`,
                             "icon": concentrationIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -256,7 +256,7 @@ export default {
                         {
                             "id": "w17",
                             "name": "Elemental Bulk",
-                            "description": (min,max) => `Gain 20% All Resist until the end of Turn`,
+                            "description": (min,max) => `Gain ${min}% All Resist until the end of Turn`,
                             "icon": elementalBulkIcon,
                             "max": 5,
                             "col": 0,
@@ -268,7 +268,7 @@ export default {
                             "name": "Bulk Up",
                             "description": (min,max) => `Increase Defense by ${min}% Until the end of Turn`,
                             "icon": bulkupIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [50,50]
@@ -292,7 +292,7 @@ export default {
                         {
                             "id": "w20",
                             "name": "Engage",
-                            "description": (min,max) => `All Enemies Heals/Buffs apply to you as well until the end of Turn`,
+                            "description": (min,max) => `All Enemies Heals/Buffs apply to you as well at ${min}% until the end of Turn`,
                             "icon": engageIcon,
                             "max": 5,
                             "col": 1,
@@ -326,7 +326,7 @@ export default {
                             "name": "Tough",
                             "description": (min,max) => `Decrease Chance to Bleed/Stagger by ${min}%`,
                             "icon": toughIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((30 + Math.max(slvl - 1, 0) * 10), 50),Math.min((30 + Math.max(slvl - 1, 0) * 10), 50)]

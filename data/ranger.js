@@ -110,7 +110,7 @@ export default {
                             "name": "Rain of Death",
                             "description": (min,max) => `Next Ranged Attack increases Weapon Damage ${min}%`,
                             "icon": rainofdeathIcon,
-                            "max": 5,
+                            "max": 4,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min(50,(20 + Math.max(slvl - 1, 0) * 10)), Math.min(50,(20 + Math.max(slvl - 1, 0) * 10))]
@@ -126,7 +126,7 @@ export default {
                             "name": "Freezing Arrow",
                             "description": (min,max) => `Increase enemy Chance to Freeze to ${min}%`,
                             "icon": freezingarrowIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 0,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -162,7 +162,7 @@ export default {
                             "name": "Shining Beam",
                             "description": (min,max) => `Deal (${min}% Dex-Enemy Dex) Lightning Damage to Enemy (Can't be negative)`,
                             "icon": shiningbeamIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min(100,(80 + Math.max(slvl - 1, 0) * 10)), Math.min(100,(80 + Math.max(slvl - 1, 0) * 10))]
@@ -204,7 +204,7 @@ export default {
                             "name": "Bathe",
                             "description": (min,max) => `Remove all Damage Effects`,
                             "icon": batheIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -220,7 +220,7 @@ export default {
                             "name": "Hyper Action",
                             "description": (min,max) => `Gain ${min} Attack Speed for 2 Turns`,
                             "icon": hyperactionIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 0,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min(20,(10 + Math.max(slvl - 1, 0) * 5)),Math.min(20,(10 + Math.max(slvl - 1, 0) * 5))]
@@ -230,7 +230,7 @@ export default {
                             "name": "Restraining Order",
                             "description": (min,max) => `Enemy Cannot use Melee Attacks Next Turn`,
                             "icon": restrainingorderIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -240,7 +240,7 @@ export default {
                             "name": "Hunker Down",
                             "description": (min,max) => `Decrease Your Speed by 20, Increase your Defense by ${min}%`,
                             "icon": hunkerdownIcon,
-                            "max": 5,
+                            "max": 4,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min(80,(50 + Math.max(slvl - 1, 0) * 10)),Math.min(80,(50 + Math.max(slvl - 1, 0) * 10))]
@@ -266,7 +266,7 @@ export default {
                             "name": "Focus",
                             "description": (min,max) => `Your next Attack cannot be Evaded`,
                             "icon": focusIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -292,7 +292,7 @@ export default {
                             "name": "Lead The Way",
                             "description": (min,max) => `You Take Actions First Next Turn`,
                             "icon": leadthewayIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -324,7 +324,7 @@ export default {
                             "name": "Quick Resist",
                             "description": (min,max) => `When you Attack First, gain ${min}% All Resist That Turn`,
                             "icon": quickresistIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min(5,3 + Math.max(slvl - 1, 0)), Math.min(5,3 + Math.max(slvl - 1, 0) * 3)]
@@ -334,7 +334,7 @@ export default {
                             "name": "Quick Lock",
                             "description": (min,max) => `Gain ${min} more Attack Speed when not using a Shield`,
                             "icon": quicklockIcon,
-                            "max": 5,
+                            "max": 4,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min(15,6 + Math.max(slvl - 1, 0) * 3), Math.min(15,6 + Math.max(slvl - 1, 0) * 3)]
@@ -370,7 +370,7 @@ export default {
                             "name": "On the Move",
                             "description": (min,max) => `Gain ${min}% more Evasion when not using a Shield`,
                             "icon": onthemoveIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min(11,5 + Math.max(slvl - 1, 0) * 3), Math.min(11,5 + Math.max(slvl - 1, 0) * 3)]
@@ -422,7 +422,7 @@ export default {
                             "name": "Second Chance",
                             "description": (min,max) => `Your Evasion also works when Countered`,
                             "icon": secondchanceIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 0,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
