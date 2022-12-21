@@ -117,7 +117,12 @@ export const IconButton = (props) => {
         classes, active, handleChange, callback
     } = props
 
-    const { description, name, icon, max, enableTree=null } = data
+    const { 
+      description, name, 
+      icon, max, 
+      enableTree=null,
+      formula=()=>[0,0], 
+    } = data
 
     const [points, setPoints] = useState(0)
     const [isHovered, setIsHovered] = useState(false)
@@ -152,6 +157,12 @@ export const IconButton = (props) => {
 
     buttonClasses = [...buttonClasses, ...classes]
 
+    const [skillMin, skillMax] = formula(points,totalPoints,{})
+    const skillDescription = description(skillMin, skillMax)
+
+    const [nextSkillMin, nextSkillMax] = formula(points+1,totalPoints+1,{})
+    const nextSkillDescription = description(nextSkillMin, nextSkillMax)
+    
     return (<ButtonWrapper
       onMouseEnter={handleMouseEnter} 
       onMouseLeave={handleMouseLeave} 
@@ -162,7 +173,9 @@ export const IconButton = (props) => {
       {isHovered && <Tooltip>
         <TooltipTitle>{name}</TooltipTitle>
         <TooltipRank>Rank {points}/{max}</TooltipRank>
-        <TooltipDescription>{description}</TooltipDescription>
+        {points > 0 && <TooltipDescription>{skillDescription}</TooltipDescription>}
+        {points < max && <TooltipDescription>{points > 0 && <br />}Next Level:</TooltipDescription>}
+        {points < max && <TooltipDescription>{nextSkillDescription}</TooltipDescription>}
       </Tooltip>}
     </ButtonWrapper>)
 }
