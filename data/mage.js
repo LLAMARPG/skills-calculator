@@ -146,7 +146,7 @@ export default {
                             "name": "Frozen Mind",
                             "description": (min,max) => `Deal (${min}% Int-Enemy Int) Ice Damage to Enemy (Can't be negative)`,
                             "icon": frozenMindIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((80 + Math.max(slvl - 1, 0) * 10),100), Math.min((80 + Math.max(slvl - 1, 0) * 10),100)]
@@ -184,7 +184,7 @@ export default {
                             "name": "Global Warming",
                             "description": (min,max) => `Reduce incoming Cold Damage by ${min}% Until End of Next Turn`,
                             "icon": globalWarmingIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 0,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((30 + Math.max(slvl - 1, 0) * 10),50),Math.min((30 + Math.max(slvl - 1, 0) * 10),50)]
@@ -194,7 +194,7 @@ export default {
                             "name": "Darkness Falls",
                             "description": (min,max) => `Reduce incoming Electric Damage by ${min}% Until End of Next Turn`,
                             "icon": darknessFallsIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((30 + Math.max(slvl - 1, 0) * 10),50),Math.min((30 + Math.max(slvl - 1, 0) * 10),50)]
@@ -204,7 +204,7 @@ export default {
                             "name": "Preen Wool",
                             "description": (min,max) => `Reduce incoming Fire Damage by ${min}% Until End of Next Turn`,
                             "icon": preenWoolIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((30 + Math.max(slvl - 1, 0) * 10),50),Math.min((30 + Math.max(slvl - 1, 0) * 10),50)]
@@ -214,7 +214,7 @@ export default {
                             "name": "Dim Vision",
                             "description": (min,max) => `Gain ${min}% Evasion This Turn `,
                             "icon": dimvisionIcon,
-                            "max": 5,
+                            "max": 3,
                             "col": 3,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min((10 + Math.max(slvl - 1, 0) * 5),20),Math.min((10 + Math.max(slvl - 1, 0) * 5),20)]
@@ -230,7 +230,7 @@ export default {
                             "name": "Defy Cold",
                             "description": (min,max) => `${min}% Cold Immunity this Turn`,
                             "icon": defycoldIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 0,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -240,7 +240,7 @@ export default {
                             "name": "Defy Light",
                             "description": (min,max) => `${min}% Light Immunity this Turn`,
                             "icon": defylightIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -250,7 +250,7 @@ export default {
                             "name": "Defy Fire",
                             "description": (min,max) => `${min}% Fire Immunity this Turn`,
                             "icon": defyfireIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -260,7 +260,7 @@ export default {
                             "name": "Cleansing",
                             "description": (min,max) => `Remove All Debuffs from Yourself`,
                             "icon": cleansingIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 3,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -286,7 +286,7 @@ export default {
                             "name": "Boxed In",
                             "description": (min,max) => `Enemy Cannot use Ranged Attacks Next Turn`,
                             "icon": boxedinIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 3,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -328,7 +328,7 @@ export default {
                             "name": "Nullify",
                             "description": (min,max) => `Randomly Disable 1 Enemy Action or Spell This Turn`,
                             "icon": nullifyIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
@@ -354,7 +354,7 @@ export default {
                             "name": "Intellectual",
                             "description": (min,max) => `Gain ${max} Mana and ${min} Mana Regeneration`,
                             "icon": intellectualIcon,
-                            "max": 5,
+                            "max": 4,
                             "col": 1,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [Math.min(11,(3 + Math.max(slvl - 1, 0) * 2)),Math.min(20,(8 + Math.max(slvl - 1, 0) * 4))]
@@ -364,7 +364,7 @@ export default {
                             "name": "Muted",
                             "description": (min,max) => `Enemies cannot see your Actions or Spells Until End of Next Turn`,
                             "icon": mutedIcon,
-                            "max": 5,
+                            "max": 1,
                             "col": 2,
                             "dependencies": [],
                             "formula": (slvl,lvl,stats) => [100,100]
