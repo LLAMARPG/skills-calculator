@@ -52,32 +52,32 @@ export default {
                         {
                             "id": "m1",
                             "name": "Fireball",
-                            "description": (min,max) => `Deal 5 to 10 Heat Damage to Enemy`,
+                            "description": (min,max) => `Deal ${min} to ${max} Heat Damage to Enemy`,
                             "icon": fireballIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [5 + Math.max(slvl - 1, 0) + (0.1 + 0.04 * Math.max(slvl - 1, 0)) * lvl, 10 + Math.max(slvl - 1, 0) + (0.1 + 0.04 * Math.max(slvl - 1, 0)) * lvl]
                         },
                         {
                             "id": "m2",
                             "name": "Lightning Bolt",
-                            "description": (min,max) => `Deal 7 to 8 Lightning Damage to Enemy`,
+                            "description": (min,max) => `Deal ${min} to ${max} Lightning Damage to Enemy`,
                             "icon": lightningBoltIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [7 + Math.max(slvl - 1, 0) + (0.1 + 0.04 * Math.max(slvl - 1, 0)) * lvl, 8 + Math.max(slvl - 1, 0) + (0.1 + 0.04 * Math.max(slvl - 1, 0)) * lvl]
                         },
                         {
                             "id": "m3",
                             "name": "Freeze Bolt",
-                            "description": (min,max) => `Deal 4 to 11 Ice Damage to Enemy`,
+                            "description": (min,max) => `Deal ${min} to ${max} Ice Damage to Enemy`,
                             "icon": freezeBoltIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [4 + (Math.max(slvl - 1, 0) * 2) + (0.1 + 0.02 * Math.max(slvl - 1, 0)) * lvl, 4 + (Math.max(slvl - 1, 0) * 2) + (0.1 + 0.02 * Math.max(slvl - 1, 0)) * lvl]
                         }
                     ]
                 },
@@ -88,32 +88,32 @@ export default {
                         {
                             "id": "m4",
                             "name": "Burning Fire",
-                            "description": (min,max) => `Enemy Takes 5 Burn Damage Each Turn for 3 Turns`,
+                            "description": (min,max) => `Enemy Takes ${min} Burn Damage Each Turn for 3 Turns`,
                             "icon": burningFireIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [5 + Math.max(slvl - 1, 0) + (0.05 + 0.01 * Math.max(slvl - 1, 0)) * (stats?.int || 0), 5 + Math.max(slvl - 1, 0) + (0.05 + 0.01 * Math.max(slvl - 1, 0)) * (stats?.int || 0)]
                         },
                         {
                             "id": "m5",
                             "name": "Zap",
-                            "description": (min,max) => `Deal 15 Spark Damage to Enemy`,
+                            "description": (min,max) => `Deal ${min} Spark Damage to Enemy`,
                             "icon": zapIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [15 + Math.max(slvl - 1, 0) + (0.05 + 0.01 * Math.max(slvl - 1, 0)) * (stats?.int || 0), 15 + Math.max(slvl - 1, 0) + (0.05 + 0.01 * Math.max(slvl - 1, 0)) * (stats?.int || 0)]
                         },
                         {
                             "id": "m6",
                             "name": "Water Blast",
-                            "description": (min,max) => `Enemy Takes 8 Water Damage for 2 Turns`,
+                            "description": (min,max) => `Enemy Takes ${min} Water Damage for 2 Turns`,
                             "icon": waterBlastIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [8 + Math.max(slvl - 1, 0) + (0.05 + 0.02 * Math.max(slvl - 1, 0)) * (stats?.int || 0), 8 + Math.max(slvl - 1, 0) + (0.05 + 0.02 * Math.max(slvl - 1, 0)) * (stats?.int || 0)]
                         }
                     ]
                 },
@@ -124,32 +124,32 @@ export default {
                         {
                             "id": "m7",
                             "name": "Volcanic Blast",
-                            "description": (min,max) => `Deal 50% More Fire and Electric Damage This Turn`,
+                            "description": (min,max) => `Deal ${min}% More Fire and Electric Damage This Turn`,
                             "icon": volcanicBlastIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(10 + Math.max(slvl - 1, 0) * 10), (10 + Math.max(slvl - 1, 0) * 10)]
                         },
                         {
                             "id": "m8",
                             "name": "Soaking Strike",
-                            "description": (min,max) => `Deal 100% More Electric Damage to Soaked Targets This Turn`,
+                            "description": (min,max) => `Deal ${min}% More Electric Damage to Soaked Targets This Turn`,
                             "icon": soakingStrikeIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(50 + Math.max(slvl - 1, 0) * 10), (50 + Math.max(slvl - 1, 0) * 10)]
                         },
                         {
                             "id": "m9",
                             "name": "Frozen Mind",
-                            "description": (min,max) => `Deal (Int-Enemy Int) Ice Damage to Enemy (Can't be negative)`,
+                            "description": (min,max) => `Deal (${min}% Int-Enemy Int) Ice Damage to Enemy (Can't be negative)`,
                             "icon": frozenMindIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min((80 + Math.max(slvl - 1, 0) * 10),100), Math.min((80 + Math.max(slvl - 1, 0) * 10),100)]
                         }
                     ]
                 },
@@ -160,12 +160,12 @@ export default {
                         {
                             "id": "m10",
                             "name": "Elemental Blast",
-                            "description": (min,max) => `Deal 25 Random Elemental Damage to Enemy`,
+                            "description": (min,max) => `Deal ${min} Random Elemental Damage to Enemy`,
                             "icon": elementalBlastIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [15 + (0.1 + 0.04 * Math.max(slvl - 1, 0)) * lvl, 15 + (0.1 + 0.04 * Math.max(slvl - 1, 0)) * lvl]
                         },
                     ]
                 }
@@ -182,42 +182,42 @@ export default {
                         {
                             "id": "m11",
                             "name": "Global Warming",
-                            "description": (min,max) => `Reduce incoming Cold Damage by 50% Until End of Next Turn`,
+                            "description": (min,max) => `Reduce incoming Cold Damage by ${min}% Until End of Next Turn`,
                             "icon": globalWarmingIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min((30 + Math.max(slvl - 1, 0) * 10),50),Math.min((30 + Math.max(slvl - 1, 0) * 10),50)]
                         },
                         {
                             "id": "m12",
                             "name": "Darkness Falls",
-                            "description": (min,max) => `Reduce incoming Electric Damage by 50% Until End of Next Turn`,
+                            "description": (min,max) => `Reduce incoming Electric Damage by ${min}% Until End of Next Turn`,
                             "icon": darknessFallsIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min((30 + Math.max(slvl - 1, 0) * 10),50),Math.min((30 + Math.max(slvl - 1, 0) * 10),50)]
                         },
                         {
                             "id": "m13",
                             "name": "Preen Wool",
-                            "description": (min,max) => `Reduce incoming Fire Damage by 50% Until End of Next Turn`,
+                            "description": (min,max) => `Reduce incoming Fire Damage by ${min}% Until End of Next Turn`,
                             "icon": preenWoolIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min((30 + Math.max(slvl - 1, 0) * 10),50),Math.min((30 + Math.max(slvl - 1, 0) * 10),50)]
                         },
                         {
                             "id": "m14",
                             "name": "Dim Vision",
-                            "description": (min,max) => `Gain 50% Evasion This Turn `,
+                            "description": (min,max) => `Gain ${min}% Evasion This Turn `,
                             "icon": dimvisionIcon,
                             "max": 5,
                             "col": 3,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min((10 + Math.max(slvl - 1, 0) * 5),20),Math.min((10 + Math.max(slvl - 1, 0) * 5),20)]
                         },
                     ]
                 },
@@ -228,32 +228,32 @@ export default {
                         {
                             "id": "m15",
                             "name": "Defy Cold",
-                            "description": (min,max) => `100% Cold Immunity this Turn`,
+                            "description": (min,max) => `${min}% Cold Immunity this Turn`,
                             "icon": defycoldIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                         {
                             "id": "m16",
                             "name": "Defy Light",
-                            "description": (min,max) => `100% Light Immunity this Turn`,
+                            "description": (min,max) => `${min}% Light Immunity this Turn`,
                             "icon": defylightIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                         {
                             "id": "m17",
                             "name": "Defy Fire",
-                            "description": (min,max) => `100% Fire Immunity this Turn`,
+                            "description": (min,max) => `${min}% Fire Immunity this Turn`,
                             "icon": defyfireIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                         {
                             "id": "m18",
@@ -263,7 +263,7 @@ export default {
                             "max": 5,
                             "col": 3,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                     ]
                 },
@@ -274,12 +274,12 @@ export default {
                         {
                             "id": "m19",
                             "name": "Elemental Defiance",
-                            "description": (min,max) => `Reduce all incoming Elemental Damage by 50% this Turn`,
+                            "description": (min,max) => `Reduce all incoming Elemental Damage by ${min}% this Turn`,
                             "icon": elementaldefianceIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(10 + Math.max(slvl - 1, 0) * 10),(10 + Math.max(slvl - 1, 0) * 10)]
                         },
                         {
                             "id": "m20",
@@ -289,7 +289,7 @@ export default {
                             "max": 5,
                             "col": 3,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         },
                     ]
                 },
@@ -306,22 +306,22 @@ export default {
                         {
                             "id": "m21",
                             "name": "Fire Hex",
-                            "description": (min,max) => `Enemy takes 50% more Fire Damage Next Turn`,
+                            "description": (min,max) => `Enemy takes ${min}% more Fire Damage Next Turn`,
                             "icon": firehexIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(30 + Math.max(slvl - 1, 0) * 7),(30 + Math.max(slvl - 1, 0) * 7)]
                         },
                         {
                             "id": "m22",
                             "name": "Energetic",
-                            "description": (min,max) => `Gain 5 Intelligence`,
+                            "description": (min,max) => `Gain ${min} Intelligence`,
                             "icon": energeticIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(3 + Math.max(slvl - 1, 0) * 3),(3 + Math.max(slvl - 1, 0) * 3)]
                         },
                         {
                             "id": "m23",
@@ -331,7 +331,7 @@ export default {
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         }
                     ]
                 },
@@ -342,22 +342,22 @@ export default {
                         {
                             "id": "m24",
                             "name": "Electric Hex",
-                            "description": (min,max) => `Enemy takes 50% more Electric Damage Next Turn`,
+                            "description": (min,max) => `Enemy takes ${min}% more Electric Damage Next Turn`,
                             "icon": electrichexIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(30 + Math.max(slvl - 1, 0) * 7),(30 + Math.max(slvl - 1, 0) * 7)]
                         },
                         {
                             "id": "m25",
                             "name": "Intellectual",
-                            "description": (min,max) => `Gain 20 Mana and 10 Mana Regeneration`,
+                            "description": (min,max) => `Gain ${max} Mana and ${min} Mana Regeneration`,
                             "icon": intellectualIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [Math.min(11,(3 + Math.max(slvl - 1, 0) * 2)),Math.min(20,(8 + Math.max(slvl - 1, 0) * 4))]
                         },
                         {
                             "id": "m26",
@@ -367,7 +367,7 @@ export default {
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [100,100]
                         }
                     ]
                 },
@@ -378,32 +378,32 @@ export default {
                         {
                             "id": "m27",
                             "name": "Cold Hex",
-                            "description": (min,max) => `Enemy takes 50% more Cold Damage Next Turn`,
+                            "description": (min,max) => `Enemy takes ${min}% more Cold Damage Next Turn`,
                             "icon": coldhexIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(30 + Math.max(slvl - 1, 0) * 7),(30 + Math.max(slvl - 1, 0) * 7)]
                         },
                         {
                             "id": "m28",
                             "name": "Thoughtful Mind",
-                            "description": (min,max) => `Heal Target (Int)`,
+                            "description": (min,max) => `Heal Target (${min}% Int)`,
                             "icon": thoughtfulmindIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(40 + Math.max(slvl - 1, 0) * 5),(40 + Math.max(slvl - 1, 0) * 5)]
                         },
                         {
                             "id": "m29",
                             "name": "Strip Buffs",
-                            "description": (min,max) => `Remove All Buffs from Enemy`,
+                            "description": (min,max) => `Remove ${min} to ${max} Random Buff(s) from Enemy`,
                             "icon": stripbuffsIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [1 + Math.max(slvl - 1, 0),2 + Math.max(slvl - 1, 0)]
                         }
                     ]
                 },
@@ -414,12 +414,12 @@ export default {
                         {
                             "id": "m30",
                             "name": "Elemental Casting",
-                            "description": (min,max) => `When Using 3 Spells in One Turn Gain 25% All Resist Until End of Turn`,
+                            "description": (min,max) => `When Using 3 Spells in One Turn Gain ${min}% All Resist Until End of Turn`,
                             "icon": elementalcastingIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": [],
-                            "formula": (slvl,lvl,stats) => [0,0]
+                            "formula": (slvl,lvl,stats) => [(10 + Math.max(slvl - 1, 0) * 2),(10 + Math.max(slvl - 1, 0) * 2)]
                         },
                     ]
                 }
