@@ -161,7 +161,9 @@ export const IconButton = (props) => {
     const skillDescription = description(skillMin, skillMax)
 
     const [nextSkillMin, nextSkillMax] = formula(points+1,totalPoints+1,{})
-    const nextSkillDescription = description(nextSkillMin, nextSkillMax)
+    const normNSM = Math.floor(nextSkillMin * 100) / 100
+    const normNSX = Math.floor(nextSkillMax * 100) / 100
+    const nextSkillDescription = description(normNSM, normNSX)
     
     return (<ButtonWrapper
       onMouseEnter={handleMouseEnter} 
