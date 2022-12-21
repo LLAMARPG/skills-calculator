@@ -3,6 +3,37 @@ import {
     treeBg
 } from "./icons"
 
+import frigidarrowIcon from "../assets/images/skills/ranger/frigidarrow.jpg"
+import guidinglightIcon from "../assets/images/skills/ranger/guidinglight.jpg"
+import rainofarrowsIcon from "../assets/images/skills/ranger/rainofarrows.jpg"
+import frigidfuryIcon from "../assets/images/skills/ranger/frigidfury.jpg"
+import piercinglightIcon from "../assets/images/skills/ranger/piercinglight.jpg"
+import rainofdeathIcon from "../assets/images/skills/ranger/rainofdeath.jpg"
+import freezingarrowIcon from "../assets/images/skills/ranger/freezingarrow.jpg"
+import rayofsunIcon from "../assets/images/skills/ranger/rayofsun.jpg"
+import spittingimageIcon from "../assets/images/skills/ranger/spittingimage.jpg"
+import shiningbeamIcon from "../assets/images/skills/ranger/shiningbeam.jpg"
+import jumparoundIcon from "../assets/images/skills/ranger/jumparound.jpg"
+import frozenpulseIcon from "../assets/images/skills/ranger/frozenpulse.jpg"
+import batheIcon from "../assets/images/skills/ranger/bathe.jpg"
+import hyperactionIcon from "../assets/images/skills/ranger/hyperaction.jpg"
+import restrainingorderIcon from "../assets/images/skills/ranger/restrainingorder.jpg"
+import hunkerdownIcon from "../assets/images/skills/ranger/hunkerdown.jpg"
+import divinelightIcon from "../assets/images/skills/ranger/divinelight.jpg"
+import focusIcon from "../assets/images/skills/ranger/focus.jpg"
+import innerthoughtsIcon from "../assets/images/skills/ranger/innerthoughts.jpg"
+import leadthewayIcon from "../assets/images/skills/ranger/leadtheway.jpg"
+import agileIcon from "../assets/images/skills/ranger/agile.jpg"
+import quickresistIcon from "../assets/images/skills/ranger/quickresist.jpg"
+import quicklockIcon from "../assets/images/skills/ranger/quicklock.jpg"
+import finetunedIcon from "../assets/images/skills/ranger/finetuned.jpg"
+import doublestrikeIcon from "../assets/images/skills/ranger/doublestrike.jpg"
+import onthemoveIcon from "../assets/images/skills/ranger/onthemove.jpg"
+import lightfootedIcon from "../assets/images/skills/ranger/lightfooted.jpg"
+import elementofsurpriseIcon from "../assets/images/skills/ranger/elementofsurprise.jpg"
+import drivingshotIcon from "../assets/images/skills/ranger/drivingshot.jpg"
+import secondchanceIcon from "../assets/images/skills/ranger/secondchance.jpg"
+
 export default {
     "name": "ranger",
     "icon": rangerIcon,
@@ -19,7 +50,7 @@ export default {
                             "id": "r1",
                             "name": "Frigid Arrow",
                             "description": "Next Ranged Attack Doubles Weapon Cold Damage",
-                            "icon": rangerIcon,
+                            "icon": frigidarrowIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -28,7 +59,7 @@ export default {
                             "id": "r2",
                             "name": "Guiding Light",
                             "description": "Next Ranged Attack Doubles Weapon Electric Damage",
-                            "icon": rangerIcon,
+                            "icon": guidinglightIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -37,7 +68,7 @@ export default {
                             "id": "r3",
                             "name": "Rain of Arrows",
                             "description": "Next Ranged Attack randomly doubles one Weapon Damage Type",
-                            "icon": rangerIcon,
+                            "icon": rainofarrowsIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -52,7 +83,7 @@ export default {
                             "id": "r4",
                             "name": "Frigid Fury",
                             "description": "Add 6 to 8 Water Damage to your next Attack",
-                            "icon": rangerIcon,
+                            "icon": frigidfuryIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -61,7 +92,7 @@ export default {
                             "id": "r5",
                             "name": "Piercing Light",
                             "description": "Add 5 to 8 Spark Damage to your next Attack",
-                            "icon": rangerIcon,
+                            "icon": piercinglightIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -70,7 +101,7 @@ export default {
                             "id": "r6",
                             "name": "Rain of Death",
                             "description": "Next Ranged Attack Doubles All Weapon Damage",
-                            "icon": rangerIcon,
+                            "icon": rainofdeathIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -85,7 +116,7 @@ export default {
                             "id": "r7",
                             "name": "Freezing Arrow",
                             "description": "Increase enemy Chance to Freeze to 100%",
-                            "icon": rangerIcon,
+                            "icon": freezingarrowIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -94,7 +125,7 @@ export default {
                             "id": "r8",
                             "name": "Ray of Sun",
                             "description": "Deal 13 to 15 Lightning Damage",
-                            "icon": rangerIcon,
+                            "icon": rayofsunIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -103,7 +134,7 @@ export default {
                             "id": "r9",
                             "name": "Spitting Image",
                             "description": "Create a Clone of yourself that copies your Attacks at 50% Power Until End of Turn",
-                            "icon": rangerIcon,
+                            "icon": spittingimageIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -118,7 +149,7 @@ export default {
                             "id": "r10",
                             "name": "Shining Beam",
                             "description": "Deal (Dex-Enemy Dex) Lightning Damage to Enemy",
-                            "icon": rangerIcon,
+                            "icon": shiningbeamIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -139,7 +170,7 @@ export default {
                             "id": "r11",
                             "name": "Jump Around",
                             "description": "Gain 50% more Evasion this Turn",
-                            "icon": rangerIcon,
+                            "icon": jumparoundIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -148,7 +179,7 @@ export default {
                             "id": "r12",
                             "name": "Frozen Pulse",
                             "description": "Slow Enemy by 50% Next Turn",
-                            "icon": rangerIcon,
+                            "icon": frozenpulseIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -157,7 +188,7 @@ export default {
                             "id": "r13",
                             "name": "Bathe",
                             "description": "Remove all Damage Effects",
-                            "icon": rangerIcon,
+                            "icon": batheIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -172,7 +203,7 @@ export default {
                             "id": "r14",
                             "name": "Hyper Action",
                             "description": "Gain 20 Attack Speed for 2 Turns",
-                            "icon": rangerIcon,
+                            "icon": hyperactionIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -181,7 +212,7 @@ export default {
                             "id": "r15",
                             "name": "Restraining Order",
                             "description": "Enemy Cannot use Melee Attacks Next Turn",
-                            "icon": rangerIcon,
+                            "icon": restrainingorderIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -190,7 +221,7 @@ export default {
                             "id": "r16",
                             "name": "Hunker Down",
                             "description": "Decrease Your Speed by 20, Double your Defense until end of Next Turn",
-                            "icon": rangerIcon,
+                            "icon": hunkerdownIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -205,7 +236,7 @@ export default {
                             "id": "r17",
                             "name": "Divine Light",
                             "description": "Gain Life Equal to Electric Damage dealt this Turn",
-                            "icon": rangerIcon,
+                            "icon": divinelightIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -214,7 +245,7 @@ export default {
                             "id": "r18",
                             "name": "Focus",
                             "description": "Your next Attack cannot be Evaded",
-                            "icon": rangerIcon,
+                            "icon": focusIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -223,7 +254,7 @@ export default {
                             "id": "r19",
                             "name": "Inner Thoughts",
                             "description": "Heal yourself (Dex)",
-                            "icon": rangerIcon,
+                            "icon": innerthoughtsIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -238,7 +269,7 @@ export default {
                             "id": "r20",
                             "name": "Lead The Way",
                             "description": "You Take Actions First Next Turn",
-                            "icon": rangerIcon,
+                            "icon": leadthewayIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -259,7 +290,7 @@ export default {
                             "id": "r21",
                             "name": "Agile",
                             "description": "Gain 5 Agility",
-                            "icon": rangerIcon,
+                            "icon": agileIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -268,7 +299,7 @@ export default {
                             "id": "r22",
                             "name": "Quick Resist",
                             "description": "When you Attack First, gain 5% All Resist That Turn",
-                            "icon": rangerIcon,
+                            "icon": quickresistIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -277,7 +308,7 @@ export default {
                             "id": "r23",
                             "name": "Quick Lock",
                             "description": "Gain 20 more Attack Speed when not using a Shield",
-                            "icon": rangerIcon,
+                            "icon": quicklockIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -292,7 +323,7 @@ export default {
                             "id": "r24",
                             "name": "Fine Tuned",
                             "description": "Gain 5 Dexterity",
-                            "icon": rangerIcon,
+                            "icon": finetunedIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -301,7 +332,7 @@ export default {
                             "id": "r25",
                             "name": "Double Strike",
                             "description": "When you Attack First, gain 5% Chance for an Attack to hit twice",
-                            "icon": rangerIcon,
+                            "icon": doublestrikeIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -310,7 +341,7 @@ export default {
                             "id": "r26",
                             "name": "On the Move",
                             "description": "Gain 10% more Evasion when not using a Shield",
-                            "icon": rangerIcon,
+                            "icon": onthemoveIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -325,7 +356,7 @@ export default {
                             "id": "r27",
                             "name": "Light Footed",
                             "description": "Gain 10% Evasion",
-                            "icon": rangerIcon,
+                            "icon": lightfootedIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
@@ -334,7 +365,7 @@ export default {
                             "id": "r28",
                             "name": "Element of Surprise",
                             "description": "When you Attack First increase Chance of Ailment by 10%",
-                            "icon": rangerIcon,
+                            "icon": elementofsurpriseIcon,
                             "max": 5,
                             "col": 1,
                             "dependencies": []
@@ -343,7 +374,7 @@ export default {
                             "id": "r29",
                             "name": "Driving Shot",
                             "description": "Gain 10% more Damage when not using a Shield",
-                            "icon": rangerIcon,
+                            "icon": drivingshotIcon,
                             "max": 5,
                             "col": 2,
                             "dependencies": []
@@ -358,7 +389,7 @@ export default {
                             "id": "r30",
                             "name": "Second Chance",
                             "description": "Your Evasion also works when Countered",
-                            "icon": rangerIcon,
+                            "icon": secondchanceIcon,
                             "max": 5,
                             "col": 0,
                             "dependencies": []
