@@ -1,6 +1,7 @@
 import bgImg from '../assets/images/art/llama-group-1.jpg'
 import styled from "styled-components"
 import Image from 'next/image'
+import Meta from './Meta'
 
 const MainWrapper = styled.main`
     width: 100%;
@@ -48,6 +49,7 @@ export const Layout = (props) => {
     const { children } = props
     return (
         <MainWrapper bg={bgImg}>
+            <Meta />
             <Background>
                 <Image src={bgImg} alt="background image" fill />
             </Background>
